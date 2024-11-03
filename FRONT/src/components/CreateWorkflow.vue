@@ -25,13 +25,18 @@
 
     <p v-if="workflowId">Workflow créé avec succès ! ID : {{ workflowId }}</p>
   </div>
+  <CookieManager />
 </template>
 
 <script>
 import { ref, reactive } from 'vue';
-import { createWorkflow } from '../services/api'; // Adjust to the actual path
+import { createWorkflow } from '../services/api'; 
+import CookieManager from './CookieManager.vue';
 
 export default {
+  components: {
+    CookieManager, 
+  },
   setup() {
     const workflowData = reactive({
       name: '',
@@ -75,6 +80,7 @@ export default {
       createWorkflow: createWorkflowFunc,
       addStep,
       removeStep,
+      
     };
   },
 };

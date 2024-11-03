@@ -2,15 +2,19 @@
   <div id="app">
     <Navbar />
     <router-view />
+    <CookieManager />
   </div>
 </template>
 
 <script>
+
 import Navbar from './components/Navbar.vue';
+import CookieManager from './components/CookieManager.vue';
 
 export default {
   components: {
     Navbar,
+    CookieManager,
   },
 };
 </script>
